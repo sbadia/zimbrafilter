@@ -168,7 +168,7 @@ def zimbra_post(opener, base, method, data):
         sys.stderr.write("*** Error response from server:\n");
         for key, value in sorted(vars(e).items()):
             sys.stderr.write("  {}: {}\n".format(repr(key), repr(value)))
-        sys.stderr.write("*** Server data:\n  {!r}\n\n", e.fp.read())
+        sys.stderr.write("*** Server data:\n  {!r}\n\n".format(e.fp.read()))
         raise
 
 opener = open_jar()
