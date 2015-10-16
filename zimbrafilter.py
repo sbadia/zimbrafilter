@@ -47,7 +47,7 @@ def patch_https_implementation():
 
     wrap_socket_orig = ssl.wrap_socket
     def wrap_socket(sock, *args, **kwargs):
-        kwargs["ca_certs"] = "/etc/pki/tls/certs/ca-bundle.crt"
+        kwargs["ca_certs"] = "/etc/ssl/certs/ca-certificates.crt"
         kwargs["cert_reqs"] = ssl.CERT_REQUIRED
         kwargs["ciphers"] = "HIGH:!aNULL:!SRP:!PSK"
         kwargs["do_handshake_on_connect"] = True
